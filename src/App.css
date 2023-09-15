@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main--container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "Header"
+    "Lists";
+  width: 85%;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.6);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+h1 {
+  font-size: 3rem;
+  margin-top: 2%;
+  text-align: center;
+}
+.todo--header {
+  grid-area: Header;
+  text-align: center;
+  border-bottom: 1px solid gray;
+  padding: 2%;
+}
+.list--area {
+  grid-area: Lists;
+  margin-bottom: 2%;
+  display: flex;
+  flex-direction: column;
+}
+.todo--header,
+.list--area {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+.list--items {
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto auto;
+  align-items: center;
+}
+.textbar--area {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+#textbar {
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: auto;
+  width: 100%;
+}
+#list--textbox {
+  margin-left: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: transparent;
+  border: none;
+  padding-left: 10px;
+}
+.buttons--area {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+.text--area {
+  display: flex;
+}
+.clear--all {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+}
+
+@media (max-width: 425px) {
+  .main--container {
+    box-shadow: none;
+  }
+  .todo--header {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .textbar--area {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+      "Textbar"
+      "saveButton";
+  }
+  #textbar {
+    grid-area: Textbar;
+  }
+  .save--button {
+    grid-area: saveButton;
+  }
+  .list--items {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto;
+    grid-template-areas:
+      "Textarea"
+      "Buttonsarea";
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .text--area {
+    grid-area: Textarea;
+  }
+  .buttons--area {
+    grid-area: Buttonsarea;
+  }
+}
